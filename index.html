@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TIMMY BERNERS LEE</title>
+    <style>
+        #tim-image {
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        #fact-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TIMMY BERNERS LEE</h1>
+    <img id="tim-image" src="tim-berners-lee.jpg" alt="Tim Berners-Lee" width="200">
+    <div id="fact-container"></div>
+
+    <script>
+        var facts = [
+            "Tim Berners-Lee is a British computer scientist who is best known as the inventor of the World Wide Web.",
+            "He developed the first web browser and web server in 1990.",
+            "The World Wide Web (WWW) was created as a way to share information between scientists at CERN.",
+            "Tim Berners-Lee proposed the idea of the World Wide Web in a memo in March 1989.",
+            "He is an advocate for net neutrality and open access to information on the web."
+        ];
+
+        function getRandomFact() {
+            var randomFactIndex = Math.floor(Math.random() * facts.length);
+            return facts[randomFactIndex];
+        }
+
+        var timImage = document.getElementById("tim-image");
+        var factContainer = document.getElementById("fact-container");
+
+        timImage.addEventListener("click", function() {
+            var fact = getRandomFact();
+            factContainer.innerText = fact;
+        });
+    </script>
+</body>
+</html>
